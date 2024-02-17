@@ -1,5 +1,5 @@
 {
-  "name": "@baselime/node-opentelemetry",
+  "name": "@khulnasoft/node-opentelemetry",
   "version": "0.3.8",
   "description": "Instrument node.js applications with open telemetry ",
   "type": "module",
