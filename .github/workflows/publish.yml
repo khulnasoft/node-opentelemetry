@@ -36,9 +36,9 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
-          scope: "@baselime"
+          scope: "@khulnasoft"
   
-      - run: echo "registry=https://npm.pkg.github.com/@baselime" >> .npmrc
+      - run: echo "registry=https://npm.pkg.github.com/@khulnasoft" >> .npmrc
   
       - name: Publish to GitHub registry
         continue-on-error: true
@@ -108,20 +108,20 @@ jobs:
           channel-id: 'C04KT9JNRHS'
           payload: |
             {
-              "text": "[Release] Baselime Opentelemetry for Node.JS v${{ steps.tag_name.outputs.current_version }}",
+              "text": "[Release] Kengine Opentelemetry for Node.JS v${{ steps.tag_name.outputs.current_version }}",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*[Release] Baselime Opentelemetry for Node.JS v${{ steps.tag_name.outputs.current_version }}*"
+                    "text": "*[Release] Kengine Opentelemetry for Node.JS v${{ steps.tag_name.outputs.current_version }}*"
                   }
                 },
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "<https://github.com/Baselime/node-opentelemetry/releases/tag/v${{ steps.tag_name.outputs.current_version }}|https://github.com/Baselime/node-opentelemetry/releases/tag/v${{ steps.tag_name.outputs.current_version }}>"
+                    "text": "<https://github.com/Khulnasoft/node-opentelemetry/releases/tag/v${{ steps.tag_name.outputs.current_version }}|https://github.com/Baselime/node-opentelemetry/releases/tag/v${{ steps.tag_name.outputs.current_version }}>"
                   }
                 }
               ]
