@@ -6,7 +6,10 @@ export class StripePlugin extends HttpPlugin implements HttpPlugin {
     name = 'stripe'
 
     shouldParseRequest(request: ClientRequest | IncomingMessage): boolean {
-        if (request instanceof ClientRequest && request.host?.includes('api.stripe.com')) {
+        const allowedHosts = new Set(['api.stripe.com']);
+        const host = request.host?.toLowerCase().split(':')[0];
+
+        if (request instanceof ClientRequest && host !== undefined && allowedHosts.has(host)) {
             return true;
         }
         return false;
